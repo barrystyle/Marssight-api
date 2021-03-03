@@ -42,10 +42,9 @@ exports.index = function(req, res) {
   var currentTime = +new Date();
   if (btceusdRate === 0 || currentTime >= (timestamp + delay)) {
     timestamp = currentTime;
-
-    _request('https://btc-e.com/api/2/ltc_usd/ticker/', function(err, data) {
-      if (!err) btceusdRate = parseFloat(JSON.parse(data).ticker.last).toFixed(3);
-
+    _request('http://price.marscoin.org', function(err, data) {
+      if (!err) btceusdRate = parseFloat(data).toFixed(3);
+        console.log(btceusdRate);
       res.jsonp({
         status: 200,
         data: { btceusd: btceusdRate }
@@ -58,4 +57,5 @@ exports.index = function(req, res) {
     });
   }
 };
+
 
