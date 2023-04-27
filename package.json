@@ -1,12 +1,12 @@
 {
-  "name": "insight-bitcore-api",
-  "description": "An open-source bitcoin blockchain API. The Insight API provides you with a convenient, powerful and simple way to query and broadcast data on the bitcoin network and build your own services with it.",
-  "version": "0.2.14",
+  "name": "marssight-api",
+  "description": "An open-source Marscoin blockchain API. The Insight API provides you with a convenient, powerful and simple way to query and broadcast data on the Marscoin network and build your own services with it. Built on Litesight-api and Bitpay Bitcore",
+  "version": "0.3.1",
   "author": {
-    "name": "Ryan X Charles",
-    "email": "ryan@bitpay.com"
+    "name": "Lennart Lopin",
+    "email": "lennart.lopin@gmail.com"
   },
-  "repository": "git://github.com/bitpay/insight-api.git",
+  "repository": "git://github.com/marscoin/Marssight-api.git",
   "contributors": [{
     "name": "Matias Alejo Garcia",
     "email": "ematiu@gmail.com"
@@ -23,13 +23,16 @@
     "name": "Juan Ignacio Sosa Lopez",
     "email": "bechilandia@gmail.com"
   }, {
+    "name": "pembo210",
+    "email": "pembo210@gmail.com"
+  }, {
     "name": "Ivan Socolsky",
     "email": "jungans@gmail.com"
   }],
   "bugs": {
-    "url": "https://github.com/bitpay/insight-api/issues"
+    "url": "https://github.com/marscoin/Marssight-api/issues"
   },
-  "homepage": "https://github.com/bitpay/insight-api",
+  "homepage": "https://github.com/marscoin/Marssight-api",
   "license": "MIT",
   "keywords": [
     "insight",
@@ -38,7 +41,9 @@
     "bitcoin api",
     "blockchain api",
     "json",
-    "bitcore"
+    "bitcore",
+    "litecore",
+    "marscoin"
   ],
   "engines": {
     "node": "*"
@@ -52,7 +57,7 @@
     "base58-native": "0.1.2",
     "bignum": "*",
     "bitauth": "^0.1.1",
-    "bitcore": "git://github.com/bitpay/bitcore.git#aa41c70cff2583d810664c073a324376c39c8b36",
+    "bitcore": "git://github.com/pembo210/Litecore.git",
     "bufferput": "git://github.com/bitpay/node-bufferput.git",
     "buffertools": "*",
     "commander": "^2.3.0",
