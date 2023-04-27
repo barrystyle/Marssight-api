@@ -131,20 +131,12 @@ if (config.enableRatelimiter) {
   require('./plugins/ratelimiter').init(expressApp, config.ratelimiter);
 }
 
-if (config.enableMailbox) {
-  require('./plugins/mailbox').init(ios, config.mailbox);
-}
-
-if (config.enableCleaner) {
-  require('./plugins/cleaner').init(config.cleaner);
-}
-
-if (config.enableMonitor) {
-  require('./plugins/monitor').init(config.monitor);
-}
-
 if (config.enableEmailstore) {
   require('./plugins/emailstore').init(config.emailstore);
+}
+
+if (config.enableCurrencyRates) {
+  require('./plugins/currencyrates').init(config.currencyrates);
 }
 
 // express settings

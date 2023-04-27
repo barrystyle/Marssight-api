@@ -24,15 +24,15 @@ var home = process.env.INSIGHT_DB || (getUserHome() + '/.litecoin-insight');
 if (process.env.INSIGHT_NETWORK === 'livenet') {
   env = 'livenet';
   db = home;
-  port = '3000';
-  b_port = '9332';
-  p2p_port = '9333';
+  port = '3005';
+  b_port = '9981';
+  p2p_port = '8338';
 } else {
   env = 'testnet';
   db = home + '/testnet';
-  port = '3001';
-  b_port = '19332';
-  p2p_port = '19333';
+  port = '3006';
+  b_port = '18338';
+  p2p_port = '18339';
 }
 port = parseInt(process.env.INSIGHT_PORT) || port;
 
@@ -58,18 +58,18 @@ var isLinux = /^linux/.test(process.platform);
 if (!dataDir) {
   if (isWin) dataDir = '%APPDATA%\\Litecoin\\';
   if (isMac) dataDir = process.env.HOME + '/Library/Application Support/Litecoin/';
-  if (isLinux) dataDir = process.env.HOME + '/.litecoin/';
+  if (isLinux) dataDir = process.env.HOME + '/.marscoin/';
 }
 dataDir += network === 'testnet' ? 'testnet3' : '';
-
+var forceRPCsync = process.env.INSIGHT_FORCE_RPC_SYNC;
 var safeConfirmations = process.env.INSIGHT_SAFE_CONFIRMATIONS || 6;
 var ignoreCache = process.env.INSIGHT_IGNORE_CACHE || 0;
 
 
 var bitcoindConf = {
   protocol: process.env.BITCOIND_PROTO || 'http',
-  user: process.env.BITCOIND_USER || 'liteuser',
-  pass: process.env.BITCOIND_PASS || 'litepass',
+  user: process.env.BITCOIND_USER || 'marscoinrpc',
+  pass: process.env.BITCOIND_PASS || '65VqB2sComWaHzMPPM5BR5wUNu2jnkouSvgQgSFawQgf',
   host: process.env.BITCOIND_HOST || '127.0.0.1',
   port: process.env.BITCOIND_PORT || b_port,
   p2pPort: process.env.BITCOIND_P2P_PORT || p2p_port,
@@ -78,6 +78,7 @@ var bitcoindConf = {
   // DO NOT CHANGE THIS!
   disableAgent: true
 };
+
 
 var enableMonitor = process.env.ENABLE_MONITOR === 'true';
 var enableCleaner = process.env.ENABLE_CLEANER === 'true';
@@ -130,4 +131,5 @@ module.exports = {
   },
   safeConfirmations: safeConfirmations, // PLEASE NOTE THAT *FULL RESYNC* IS NEEDED TO CHANGE safeConfirmations
   ignoreCache: ignoreCache,
+  forceRPCsync: forceRPCsync,
 };
