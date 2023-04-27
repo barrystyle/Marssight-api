@@ -4,7 +4,7 @@
 and websocket API. Marssight API runs in NodeJS and uses LevelDB for storage. 
 
 This is a backend-only service. If you're looking for the web frontend application,
-take a look at https://github.com/pembo210/Litesight.
+take a look at https://github.com/marscoin/Marssight.
 
 *Marssight API* allows to develop Marscoin-related applications (such as wallets) that 
 require certain information from the blockchain that litecoind does not provide.
