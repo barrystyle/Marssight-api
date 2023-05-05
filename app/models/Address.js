@@ -2,12 +2,12 @@
 
 var imports = require('soop').imports();
 var async = require('async');
-var bitcore = require('Litecore');
+var bitcore = require('marscore');
 var BitcoreAddress = bitcore.Address;
 var BitcoreTransaction = bitcore.Transaction;
 var BitcoreUtil = bitcore.util;
 var Parser = bitcore.BinaryParser;
-var Buffer = bitcore.Buffer;
+//var Buffer = bitcore.Buffer;
 var TransactionDb = imports.TransactionDb || require('../../lib/TransactionDb').default();
 var BlockDb = imports.BlockDb || require('../../lib/BlockDb').default();
 var config = require('../../config/config');

@@ -11,7 +11,7 @@ var util        = require('util');
 var Rpc         = require('../../lib/Rpc');
 
 var imports     = require('soop').imports();
-var bitcore     = require('Litecore');
+var bitcore     = require('marscore');
 var RpcClient   = bitcore.RpcClient;
 var config      = require('../../config/config');
 var bitcoreRpc  = imports.bitcoreRpc || new RpcClient(config.bitcoind);
