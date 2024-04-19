@@ -2,7 +2,7 @@
 //var imports       = require('soop').imports();
 
 var async     = require('async');
-var bitcore   = require('marscore');
+var bitcore   = require('Litecore');
 var RpcClient = bitcore.RpcClient;
 var config    = require('../../config/config');
 var rpc       = new RpcClient(config.bitcoind);
@@ -14,7 +14,7 @@ Status.prototype.getInfo = function(next) {
   var that = this;
   async.series([
     function (cb) {
-      rpc.getNetworkInfo(function(err, info){
+      rpc.getInfo(function(err, info){
         if (err) return cb(err);
 
         that.info = info.result;

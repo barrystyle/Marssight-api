@@ -11,12 +11,11 @@ var HistoricSync = require('./lib/HistoricSync');
 var http = require('http');
 var https = require('https');
 var express = require('express');
-var program = require('commander');
+const { program } = require('commander');
 
 var config = require('./config/config');
 var logger = require('./lib/logger').logger;
-program
-  .version(config.version);
+program.version(config.version)
 
 // text title
 console.log(

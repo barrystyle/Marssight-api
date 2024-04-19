@@ -1,7 +1,7 @@
 {
   "name": "marssight-api",
   "description": "An open-source Marscoin blockchain API. The Insight API provides you with a convenient, powerful and simple way to query and broadcast data on the Marscoin network and build your own services with it. Built on Litesight-api and Bitpay Bitcore",
-  "version": "0.3.7",
+  "version": "0.3.6",
   "author": {
     "name": "Lennart Lopin",
     "email": "lennart.lopin@gmail.com"
@@ -42,7 +42,7 @@
     "blockchain api",
     "json",
     "bitcore",
-    "marscore",
+    "litecore",
     "marscoin"
   ],
   "engines": {

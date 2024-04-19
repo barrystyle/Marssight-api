@@ -28,12 +28,11 @@ module.exports = function(app, historicSync, peerSync) {
   app.enable('jsonp callback');
   app.use(config.apiPrefix, setHistoric);
   app.use(config.apiPrefix, setPeer);
-  app.use(express.urlencoded({ extended: false }));
-  //app.use(express.logger('dev'));
-  //app.use(express.json());
-  //app.use(express.urlencoded());
-  //app.use(express.methodOverride());
-  //app.use(express.compress());
+  app.use(express.logger('dev'));
+  app.use(express.json());
+  app.use(express.urlencoded());
+  app.use(express.methodOverride());
+  app.use(express.compress());
 
   if (config.enableEmailstore) {
     var allowCopayCrossDomain = function(req, res, next) {
@@ -59,7 +58,7 @@ module.exports = function(app, historicSync, peerSync) {
   });
 
   //routes should be at the last
-  //app.use(app.router);
+  app.use(app.router);
 
   //Assume 404 since no middleware responded
   app.use(function(req, res) {
