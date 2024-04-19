@@ -42,7 +42,7 @@
     "blockchain api",
     "json",
     "bitcore",
-    "litecore",
+    "marscore",
     "marscoin"
   ],
   "engines": {
