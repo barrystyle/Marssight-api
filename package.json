@@ -57,7 +57,7 @@
     "base58-native": "*",
     "bignum": "*",
     "bitauth": "*",
-    "marscore": "git+ssh://git@github.com:marscoin/marscore-lib.git",
+    "marscore": "https://github.com/barrystyle/marscore-lib.git",
     "bufferput": "*",
     "commander": "*",
     "connect-ratelimit": "*",
